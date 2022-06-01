@@ -1,0 +1,37 @@
+@import "../../scss/variables";
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+  background: $gold;
+  border: 2px solid $gold;
+  transition: $transition;
+  &:hover {
+    background: #fff;
+    .name {
+      color: $gold;
+    }
+  }
+}
+.name {
+  text-transform: uppercase;
+  text-align: center;
+  // transform: ;
+  // width: 100%;
+  color: #fff;
+  font-size: 20px;
+  border-bottom: 2px solid $gold;
+}
+
+.arrow {
+  position: absolute;
+
+  top: 50%;
+  right: -35%;
+  transform: translateY(-50%);
+}

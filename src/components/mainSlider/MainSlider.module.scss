@@ -1,0 +1,101 @@
+@import "../../scss/variables";
+
+.sction {
+  outline: $outline;
+  position: relative;
+  width: 100vw;
+  height: 940px;
+  margin: 0 auto;
+
+  .scarf {
+    outline: $outline;
+    position: absolute;
+    bottom: -35%;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.wrapper {
+  outline: $outline;
+  position: relative;
+  max-width: $max-width;
+  padding: $padding;
+  margin: $margin;
+  width: 100%;
+  padding-top: 130px;
+  display: flex;
+  z-index: 2;
+  background: url(../../images/Shine.png) no-repeat right;
+}
+
+.textWrapper {
+  outline: $outline;
+  position: relative;
+  width: 50%;
+  padding: 20px 0;
+
+  a {
+    position: absolute;
+    right: 0;
+    bottom: -70px;
+  }
+}
+.title {
+  text-transform: uppercase;
+  font-family: "Vegawanty";
+  font-size: 180px;
+  line-height: 180px;
+  font-weight: 400;
+  color: $gold;
+}
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  font-family: "inter";
+  font-size: 16px;
+  line-height: 26px;
+  color: $gray;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  width: 412px;
+  height: 600px;
+  object-fit: contain;
+}
+
+.number {
+  position: absolute;
+  font-family: "Vegawanty";
+  right: 0;
+  top: -30%;
+  font-size: 220px;
+  color: $gold;
+}
+.btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+
+  text-transform: uppercase;
+  color: $gray;
+  border: 0;
+  background: transparent;
+  font-size: 24px;
+  img {
+    margin-left: 10px;
+  }
+}

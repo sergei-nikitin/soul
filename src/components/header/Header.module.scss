@@ -1,0 +1,160 @@
+@import "../../scss/variables";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  border-bottom: 1px solid $gray;
+  @media (max-width: 1040px) {
+    display: none;
+  }
+}
+
+.wrapper {
+  // outline: $outline;
+  max-width: $max-width;
+  padding: $padding;
+  margin: $margin;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBlock {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 28px;
+  color: $gray;
+  padding: 10px 10px;
+  margin: 0 20px 0 0;
+  transition: $transition;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 8px;
+    opacity: 0;
+    background-image: url(../../images/icons/linkHover.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: $transition;
+  }
+
+  &:hover {
+    color: $black;
+    &::before {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+.activeLink {
+  color: $black;
+  transition: $transition;
+
+  &::before {
+    width: 100%;
+    opacity: 1;
+  }
+}
+.navArrov {
+  margin-left: 10px;
+}
+
+.navHoverSvg {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+
+.select {
+  position: relative;
+  transition: all 0.5s ease;
+  .span {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: 0;
+    width: 100vw;
+    background: url(../../images/BG.png) no-repeat center;
+    border-radius: 0 0 80px 80px;
+    transition: all 0.5s ease;
+  }
+
+  a:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+  a:nth-of-type(3) {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+  a:nth-of-type(4) {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover {
+    .span {
+      height: 180px;
+    }
+
+    a:nth-of-type(2) {
+      position: absolute;
+      top: 100%;
+      opacity: 1;
+      z-index: 1;
+    }
+    a:nth-of-type(3) {
+      position: absolute;
+      top: 200%;
+      opacity: 1;
+      z-index: 1;
+    }
+    a:nth-of-type(4) {
+      position: absolute;
+      top: 300%;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+
+.cartLink {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 28px;
+  color: $gray;
+  img {
+    margin-right: 10px;
+  }
+  span {
+    margin-left: 10px;
+  }
+}
