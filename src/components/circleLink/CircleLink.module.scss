@@ -11,6 +11,7 @@
   background: $gold;
   border: 2px solid $gold;
   transition: $transition;
+  z-index: 22;
   &:hover {
     background: #fff;
     .name {

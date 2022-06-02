@@ -5,6 +5,8 @@
   top: 0;
   left: 0;
   width: 100vw;
+  height: 96px;
+  padding: 12px 0;
   border-bottom: 1px solid $gray;
   @media (max-width: 1040px) {
     display: none;
@@ -14,7 +16,7 @@
 .wrapper {
   // outline: $outline;
   max-width: $max-width;
-  padding: $padding;
+  // padding: $padding;
   margin: $margin;
   width: 100%;
   display: flex;

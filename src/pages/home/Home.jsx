@@ -1,11 +1,15 @@
 import React from 'react';
 
-import MainSlider from '../../components/mainSlider';
+import Main from '../../components/home/main';
+import About from '../../components/home/about';
+import Twirl from '../../components/home/twirl';
 
 export const Home = () => {
   return (
     <div>
-      <MainSlider />
+      <Main />
+      <About />
+      <Twirl />
     </div>
   );
 };
