@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LinkTo from '../../link';
+import Plume from '../../plume/Plume'
 // import Slider from './slider';
 
 import s from './Main.module.scss';
@@ -31,6 +32,9 @@ const Main = () => {
           </div>
         </div>
         {/* <Slider /> */}
+      </div>
+      <div className={s.scarf}>
+        <Plume></Plume>
       </div>
     </section>
   );
