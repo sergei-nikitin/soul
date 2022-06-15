@@ -2,173 +2,77 @@
 
 .footer {
   // outline: 1px solid rgb(0, 255, 26);
-  width: 100vw;
-  padding: 150px 15px 0 15px;
-  margin-top: 200px;
-  border-bottom: 1px solid $gray;
+  width: 100%;
+  // height: 340px;
+  border-top: 1px solid $dark-gray;
 }
 
 .main {
   // outline: $outline;
-  padding: $padding;
-  max-width: $max-width;
+  padding: 50px 15px;
+  max-width: 80%;
   width: 100%;
   margin: $margin;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  // justify-content: center;
   justify-content: space-between;
-  p {
-    @media (max-width: $mob) {
-      display: none;
-    }
-  }
-  @media (max-width: $tab) {
-    // flex-direction: column;
-  }
 }
 .subFooter {
-  // outline: $outline;
-  padding: $padding;
-  max-width: $max-width;
   width: 100%;
-  margin: $margin;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-top: 1px solid $dark-gray;
 
   p {
-    font-size: 16px;
+    text-transform: uppercase;
+    font-family: "inter";
+    text-align: right;
+    font-size: 14px;
     line-height: 25px;
-    color: $gray;
-    margin: 5px 20px 80px 20px;
+    color: $dark-gray;
+    margin-right: 120px;
   }
+}
 
-  @media (max-width: $mob) {
-    flex-direction: column;
-    padding: 20px;
-    p {
-      margin: 5px;
-    }
-    p:nth-of-type(3),
-    p:nth-of-type(4) {
-      display: none;
-    }
-  }
-}
-.logoWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-
-  img {
-    // outline: $outline;
-    width: 132px;
-    height: 128px;
-  }
-  @media (max-width: $mob) {
-    display: none;
-  }
-  @media (min-width: $tab) {
-    display: none;
-  }
-}
-.lozung,
-.tel {
-  text-transform: uppercase;
-  font-size: 48px;
-  line-height: 70px;
-  color: $black;
-  width: 33%;
-}
-.lozung {
-  @media (max-width: $tab) {
-    width: 45%;
-  }
+.logo {
+  width: 138px;
+  height: 134px;
 }
 
 .nav {
   // outline: $outline;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // justify-content: space-between;
   align-items: center;
-  // width: 35%;
+
   li {
     width: 100%;
-    a {
+    font-family: "inter";
+    font-size: 12px;
+    line-height: 19px;
+    margin: 4px 0;
+    color: $dark-gray;
+    a,
+    p {
+      font-family: "inter";
+      color: $dark-gray;
       text-align: left;
+      transition: $transition;
+
+      &:hover {
+        color: $black;
+      }
     }
   }
-  @media (max-width: $tab) {
-    width: 45%;
-  }
-  @media (max-width: $mob) {
-    width: 100%;
-  }
-}
-.logo {
-  position: absolute;
-  top: -152px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 105px;
-  height: 105px;
-  @media (min-width: calc( $tab +1px)) {
-    display: block;
-  }
-  @media (max-width: $tab) {
-    display: none;
-  }
-  @media (max-width: $mob) {
-    display: block;
-    width: 132px;
-    height: 128px;
-  }
-}
-.navLink {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 18px;
-  line-height: 28px;
-  color: $gray;
-  padding: 10px 10px;
-
-  transition: $transition;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 8px;
-    opacity: 0;
-    background-image: url(../../images/icons/linkHover.svg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: $transition;
-  }
-
-  &:hover {
-    color: $black;
-    &::before {
-      width: 100%;
-      opacity: 1;
-    }
+  li:first-of-type {
+    cursor: default;
   }
 }
 
 .activeLink {
-  color: $black;
+  color: $black !important;
   transition: $transition;
 
   &::before {
@@ -177,46 +81,42 @@
   }
 }
 
-.telIconsWrap {
-  @media (max-width: $tab) {
-    width: 100%;
-    .tel {
-      font-size: 30px;
-      width: 100%;
-      text-align: center;
-    }
+.contacts {
+  p {
+    font-family: "inter";
+    font-size: 12px;
+    line-height: 19px;
+    margin: 4px 0;
+    color: $dark-gray;
+  }
+  .tel {
+    font-size: 16px;
+    line-height: 25px;
+    margin: 4px 0;
+    color: $dark-gray;
+  }
 
+  .social {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 30px;
-  }
-}
+    a {
+      display: flex;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      margin-right: 18px;
+      margin-top: 15px;
+      color: $dark-gray;
 
-.social {
-  margin-top: 50px;
-
-  @media (max-width: $mob) {
-    margin-top: 20px;
-  }
-
-  a {
-    width: 16px;
-    height: 16px;
-    margin-right: 15px;
-
-    svg path {
-      transition: $transition;
-      fill: $gray;
-    }
-
-    &:hover {
-      color: $gold;
-
-      path {
-        fill: $gold;
+      &:hover {
+        color: $gold;
       }
+    }
+  }
+  .ball {
+    fill: $dark-gray;
+    &:hover {
+      fill: $gold;
     }
   }
 }

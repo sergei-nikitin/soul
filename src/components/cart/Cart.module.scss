@@ -1,0 +1,98 @@
+@import "../../scss/variables";
+
+.cartWrapper {
+  position: relative;
+  padding: 135px 120px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// .title {
+//   font-size: 64px;
+//   color: $gold;
+//   text-align: left;
+//   width: 100%;
+// }
+
+// .itemsWrap {
+//   display: flex;
+//   flex-direction: column;
+
+//   width: 100%;
+//   margin-top: 60px;
+// }
+// .description {
+//   display: flex;
+//   justify-content: space-between;
+
+//   padding-bottom: 10px;
+//   padding-right: 30px;
+//   margin-bottom: 12px;
+//   border-bottom: 2px solid $dark-gray;
+//   p {
+//     font-size: 18px;
+//   }
+// }
+
+// .info {
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-end;
+//   margin: 45px 0 0 0;
+//   padding-right: 30px;
+//   p:first-of-type {
+//     letter-spacing: $letter-spacing;
+//   }
+//   p {
+//     font-size: 32px;
+//     color: $black;
+//   }
+//   .totalPrice {
+//     color: $gold;
+//     margin-left: 130px;
+//   }
+// }
+// .actions {
+//   width: 100%;
+//   padding: 0 30px;
+//   margin-top: 90px;
+
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+// .link {
+//   font-size: 16px;
+//   color: $black;
+
+//   display: flex;
+//   align-items: center;
+
+//   img {
+//     margin-right: 100px;
+//     transform: rotate(180deg);
+//   }
+// }
+// .CHECKOUT {
+//   padding: 15px 125px 11px 125px;
+//   font-size: 22px;
+//   letter-spacing: $letter-spacing;
+//   color: #fff;
+//   background-color: $gold;
+//   box-shadow: 0px 4px 9px rgba(133, 109, 5, 0.2);
+//   border-radius: 77.5px;
+//   border: 1px solid $gold;
+//   transition: $transition;
+
+//   &:hover {
+//     color: $gold;
+//     background-color: #fff;
+//   }
+// }
+// --------

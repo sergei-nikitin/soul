@@ -1,65 +1,65 @@
 @import "../../../../scss/variables";
 
 .wrapper {
-  outline: $outline;
+  // outline: $outline;
   position: relative;
-  width: 50%;
+  width: 30%;
   height: 100%;
 
-  // background: rgb(156, 192, 133);
-  z-index: 2;
-}
-.motionDiv {
-  width: 200px;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $medium) {
+    width: 40%;
+  }
+  @media (max-width: $galaxyFold) {
+    width: 100%;
+  }
 }
 
 .flakon {
-  position: absolute;
-  bottom: 0;
-  right: 10%;
-  width: 411px;
-  height: 600px;
+  width: 398px;
+  height: 589px;
   background-repeat: no-repeat;
   background-size: contain;
-  // display: block;
-  // margin-left: auto;
-  // margin-right: 20px;
-  // margin-bottom: -100px;
+}
+.flak {
+  width: 0;
+  height: 0;
 }
 
-.scarf {
-  position: absolute;
-  top: 10%;
-  left: calc(100vw * 0.5 - 150%);
-  height: 150%;
-  width: 150%;
-  z-index: -1;
-}
-
-.numbersBlock {
-  outline: $outline;
-  position: absolute;
-  right: 0;
-
-  p {
-    font-size: 220px;
-    line-height: 220px;
-    color: $gold;
+.flakActive {
+  width: 398px;
+  height: 589px;
+  @media (max-width: $galaxyFold) {
+    width: 202px;
+    height: 297px;
   }
-  button {
-    position: absolute;
-    right: 0;
-    bottom: 10%;
-    background: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    color: $gray;
+}
 
-    img {
-      margin-left: 10px;
-    }
+.btnsBlock {
+  margin-top: 50px;
+
+  button {
+    margin-right: 15px;
+    width: 19px;
+    height: 19px;
+    border: 1px solid $gold;
+    border-radius: 50%;
+  }
+  .btn {
+    background: transparent;
+  }
+  .btnActive {
+    background: linear-gradient(
+      78.06deg,
+      #e6ba40 5.04%,
+      #f9de93 28.84%,
+      #e6ba40 55.79%,
+      #f0d17a 78.25%,
+      #e6ba40 91.27%
+    );
   }
 }

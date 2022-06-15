@@ -1,5 +1,11 @@
 import React from 'react';
 
-export const Cart = () => {
-  return <div></div>;
+import Cart from '../../components/cart';
+
+export const CartPage = () => {
+  return (
+    <>
+      <Cart />
+    </>
+  );
 };

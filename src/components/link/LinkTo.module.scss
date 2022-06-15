@@ -1,0 +1,30 @@
+@import "../../scss/variables";
+
+.link {
+  display: inline-block;
+  padding: 10px 15px 6px 15px;
+  border-radius: 77px;
+  background: $gold;
+  box-shadow: 0px 4px 9px rgba(133, 109, 5, 0.2);
+  transition: $transition;
+
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+
+  &:hover {
+    background: #bb7813;
+  }
+  &:active {
+    background: #8e5c11;
+  }
+
+  @media (min-width: $ipadPro) {
+    padding: 12px 20px 8px 20px;
+  }
+  @media (min-width: $pre-medium) {
+    padding: 12px 50px 8px 50px;
+    font-size: 22px;
+  }
+}

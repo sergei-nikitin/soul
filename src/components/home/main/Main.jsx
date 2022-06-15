@@ -1,33 +1,37 @@
 import React from 'react';
 
-import CircleLink from '../../circleLink';
-import Slider from './slider';
+import LinkTo from '../../link';
+// import Slider from './slider';
 
-import shane from '../../../images/Shine.png';
 import s from './Main.module.scss';
+import flak from '../../../assets/images/butles/red.png';
 
 const Main = () => {
   return (
-    <section className={s.sction}>
-      <div className={s.wrapper}>
+    <section className={s.section}>
+      <div className={s.container}>
         <div className={s.textWrapper}>
           <h1 className={s.title}>
-            soul
-            <br />
-            of
-            <br />
-            mine
+            <span className={s.soul}>SOUL</span> <br />
+            <span className={s.ofMine}>OF MINE</span>
           </h1>
-          <p className={s.text}>
+          <img className={s.img} src={flak} alt="flak" />
+          <p className="text">
             Translated as my soul, the accepted manifestation tenderness and
             appeal to a loved one.
           </p>
-          <CircleLink path={'/twirl'} name={'twirl'} />
+          <LinkTo path={'/collection'} name={'learn more'} />
         </div>
-        <Slider />
-        {/* <img className={s.shane} src={shane} alt="shane" /> */}
+        <div className={s.imgWrapper}>
+          <img className={s.imgBig} src={flak} alt="flak" />
+          <div className={s.btns}>
+            <button type="button" className={s.sliderBtnActive} />
+            <button type="button" />
+            <button type="button" />
+          </div>
+        </div>
+        {/* <Slider /> */}
       </div>
-      <img className={s.shane} src={shane} alt="shane" />
     </section>
   );
 };

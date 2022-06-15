@@ -1,0 +1,174 @@
+@import "../../scss/variables";
+
+.wrapper {
+  // outline: $outline;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartForm {
+  padding: 20px 0;
+  width: 55%;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    transition: $transition;
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 50px;
+    font-size: 14px;
+    color: $black;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $black;
+
+    &:focus + .label,
+    &:not(:placeholder-shown) + .label {
+      transform: translateY(-45px);
+    }
+  }
+  // input:first-of-type {
+  //   margin-bottom: 50px;
+  // }
+}
+.formTitle {
+  width: 100%;
+  font-size: 22px;
+  letter-spacing: $letter-spacing;
+  color: $dark-gray;
+  margin-bottom: 30px;
+}
+.formField {
+  position: relative;
+  width: calc(50% - 20px);
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  font-size: 16px;
+  letter-spacing: $letter-spacing;
+  color: $gray;
+  transition: $transition;
+}
+.checkBoxWrapper {
+  width: calc(50% - 20px);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  input {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  label {
+    margin-top: -25px;
+  }
+}
+.checkbox {
+  margin-right: 15px;
+  // background: transparent;
+  // border: 1px solid red;
+  // border-color: $gray;
+}
+
+.contacts {
+  width: 100%;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 30px;
+
+  font-size: 22px;
+  letter-spacing: $letter-spacing;
+  color: $dark-gray;
+}
+
+textarea {
+  font-size: 30px;
+}
+
+.submit {
+  padding: 15px 82px 11px 82px;
+  font-size: 22px;
+  letter-spacing: $letter-spacing;
+  color: #fff;
+  background-color: $gold;
+  box-shadow: 0px 4px 9px rgba(133, 109, 5, 0.2);
+  border-radius: 77.5px;
+  border: 1px solid $gold;
+  transition: $transition;
+
+  &:hover {
+    color: $gold;
+    background-color: #fff;
+  }
+}
+
+// oreders
+.ordersWrapper {
+  padding: 40px 40px;
+  width: 40%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+.ordersTitle {
+  font-size: 22px;
+  color: $dark-gray;
+}
+.ordersDescr {
+  margin-top: 45px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 18px;
+  line-height: 28px;
+  color: $dark-gray;
+  border-bottom: 1px solid $dark-gray;
+}
+
+.totalWrap {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+}
+.total {
+  font-size: 22px;
+  color: $black;
+  margin-left: auto;
+}
+.price {
+  font-size: 22px;
+  color: $gold;
+  margin-left: 80px;
+}
+
+// product
+.prod {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  border-bottom: 1px solid $black;
+}
+.prodImg {
+  width: 82px;
+  height: 120px;
+}
+.prodName {
+  text-transform: uppercase;
+  font-size: 22px;
+  color: $black;
+}
+.prodPrice {
+  font-size: 22px;
+  color: $gold;
+}

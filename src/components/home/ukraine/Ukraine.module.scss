@@ -1,0 +1,90 @@
+@import "../../../scss/variables";
+
+.section {
+  position: relative;
+  background: #29adff17;
+  // background: #faeae3;
+  padding: 410px 0 20px 0;
+  border-top: 1px solid #0082d1;
+  border-bottom: 1px solid #ffd100;
+
+  .imgBg {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 650px;
+  }
+  .svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 1280px;
+  width: 100%;
+  margin: $margin;
+  padding: $padding;
+  padding-bottom: 200px;
+
+  display: flex;
+  justify-content: space-between;
+
+  .btl {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-47%);
+  }
+}
+
+.upper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  width: 40%;
+  p:nth-of-type(2) {
+    margin-left: 30%;
+    margin-top: 30px;
+  }
+  p {
+    width: 60%;
+  }
+}
+.lower {
+  display: flex;
+  flex-direction: column;
+  padding-top: 150px;
+  width: 30%;
+  margin-right: 8%;
+
+  p {
+    // width: 60%;
+    padding-left: 13px;
+  }
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 55px;
+  // width: 50%;
+}
+.btn {
+  padding: 14px 33px 10px 33px;
+  font-size: 22px;
+  color: #035587;
+  background: #ffd100;
+  box-shadow: 0px 4px 9px rgba(133, 109, 5, 0.2);
+  border-radius: 77.5px;
+  transition: $transition;
+
+  &:hover {
+    color: #ffd100;
+    background: #0082d1;
+  }
+}

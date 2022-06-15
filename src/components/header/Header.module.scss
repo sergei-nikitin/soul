@@ -4,21 +4,45 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  max-width: 1920px;
+  width: 100%;
   height: 96px;
-  padding: 12px 0;
-  border-bottom: 1px solid $gray;
-  @media (max-width: 1040px) {
-    display: none;
+  margin: $margin;
+  padding: 18px 185px;
+
+  background: $roz;
+  background-image: url(../../images/BG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  // box-shadow: 0px 4px 6px rgba(175, 155, 137, 0.15);
+  z-index: 100;
+
+  transition: $transition;
+
+  @media (min-width: $pre-medium) {
   }
+
+  // @media (max-width: $pre-max) {
+  //   height: 80px;
+  //   padding: 15px 150px;
+  // }
+  // @media (max-width: $medium) {
+  //   padding: 15px 120px;
+  // }
+  // @media (max-width: 1040px) {
+  // }
+}
+.headerHidden {
+  // transform: translateX(100%);
+  top: -96px;
+  transition: $transition;
 }
 
 .wrapper {
   // outline: $outline;
   max-width: $max-width;
-  // padding: $padding;
-  margin: $margin;
   width: 100%;
+  margin: $margin;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,48 +59,30 @@
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 28px;
-  color: $gray;
+  color: #484848;
   padding: 10px 10px;
-  margin: 0 20px 0 0;
+  margin: 0 50px 0 0;
   transition: $transition;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 8px;
-    opacity: 0;
-    background-image: url(../../images/icons/linkHover.svg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: $transition;
-  }
 
   &:hover {
     color: $black;
-    &::before {
-      width: 100%;
-      opacity: 1;
-    }
+  }
+
+  @media (max-width: 1730px) {
+    margin-right: 45px;
   }
 }
 
 .activeLink {
+  font-size: 18px;
   color: $black;
   transition: $transition;
-
-  &::before {
-    width: 100%;
-    opacity: 1;
-  }
 }
 .navArrov {
   margin-left: 10px;
+  margin-top: -5px;
 }
 
 .navHoverSvg {
@@ -96,7 +102,10 @@
     left: 0;
     height: 0;
     width: 100vw;
-    background: url(../../images/BG.png) no-repeat center;
+    background: $roz;
+    background-image: url(../../images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 0 0 80px 80px;
     transition: all 0.5s ease;
   }
@@ -106,6 +115,7 @@
     top: 0;
     opacity: 0;
     z-index: -1;
+    padding-top: 10px;
   }
   a:nth-of-type(3) {
     position: absolute;
@@ -122,41 +132,60 @@
 
   &:hover {
     .span {
-      height: 180px;
+      top: 79px;
+      height: 115px;
+      z-index: 101;
+      box-shadow: 0px 4px 6px rgba(175, 155, 137, 0.15);
     }
 
     a:nth-of-type(2) {
       position: absolute;
-      top: 100%;
+      top: 90%;
       opacity: 1;
-      z-index: 1;
+      z-index: 101;
     }
     a:nth-of-type(3) {
       position: absolute;
-      top: 200%;
+      top: 170%;
       opacity: 1;
-      z-index: 1;
+      z-index: 101;
     }
     a:nth-of-type(4) {
       position: absolute;
-      top: 300%;
+      top: 250%;
       opacity: 1;
-      z-index: 1;
+      z-index: 101;
     }
   }
 }
 
 .cartLink {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: $black;
+  // img {
+  //   margin-right: 10px;
+  // }
+
+  p,
+  span {
+    margin-left: 10px;
+    margin-bottom: -5px;
+  }
+}
+.cartLinkEmpty {
+  cursor: default;
   display: flex;
   align-items: center;
   text-transform: uppercase;
   font-size: 18px;
   line-height: 28px;
-  color: $gray;
-  img {
-    margin-right: 10px;
-  }
-  span {
+  color: $dark-gray;
+  p {
     margin-left: 10px;
+    margin-bottom: -5px;
   }
 }

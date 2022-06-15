@@ -1,0 +1,22 @@
+@import "../../scss/variables";
+
+.btn {
+  display: inline-block;
+  padding: 16px 36px 10px 36px;
+  border-radius: 77px;
+  background: $gold;
+  border: 2px solid $gold;
+  box-shadow: 0px 4px 9px rgba(133, 109, 5, 0.2);
+  transition: $transition;
+
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  line-height: 22px;
+
+  &:hover {
+    background: #fff;
+    color: $gold;
+  }
+}

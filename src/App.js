@@ -12,23 +12,29 @@ import { Twirl } from './pages/twirl/Twirl';
 import { Treasure } from './pages/treasure/Treasure';
 import { Seduction } from './pages/seduction/Seduction';
 import { Contacts } from './pages/contacts/Contacts';
-import { Cart } from './pages/cart/Cart';
+import { CartPage } from './pages/cart/Cart';
 
 function App() {
+  // const footer = React.useRef();
+
+  // let headerHeight = header.current.clientHeight;
   return (
     <BrowserRouter>
       <Header />
       <MobHeader />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/collection" element={<Collection />} />
-        <Route path="/twirl" element={<Twirl />} />
-        <Route path="/treasure" element={<Treasure />} />
-        <Route path="/seduction" element={<Seduction />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      <div className="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/collection" element={<Collection />} />
+          <Route path="/twirl" element={<Twirl />} />
+          <Route path="/treasure" element={<Treasure />} />
+          <Route path="/seduction" element={<Seduction />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </div>
+
       <Footer />
     </BrowserRouter>
   );
