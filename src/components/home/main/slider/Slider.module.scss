@@ -1,0 +1,65 @@
+@import "../../../../scss/variables";
+
+.wrapper {
+  // outline: $outline;
+  position: relative;
+  width: 30%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $medium) {
+    width: 40%;
+  }
+  @media (max-width: $galaxyFold) {
+    width: 100%;
+  }
+}
+
+.flakon {
+  width: 398px;
+  height: 589px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.flak {
+  width: 0;
+  height: 0;
+}
+
+.flakActive {
+  width: 398px;
+  height: 589px;
+  @media (max-width: $galaxyFold) {
+    width: 202px;
+    height: 297px;
+  }
+}
+
+.btnsBlock {
+  margin-top: 50px;
+
+  button {
+    margin-right: 15px;
+    width: 19px;
+    height: 19px;
+    border: 1px solid $gold;
+    border-radius: 50%;
+  }
+  .btn {
+    background: transparent;
+  }
+  .btnActive {
+    background: linear-gradient(
+      78.06deg,
+      #e6ba40 5.04%,
+      #f9de93 28.84%,
+      #e6ba40 55.79%,
+      #f0d17a 78.25%,
+      #e6ba40 91.27%
+    );
+  }
+}

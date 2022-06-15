@@ -1,0 +1,56 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem, minusItem, removeItem } from '../../redux/slices/cartSlice';
+
+import red from '../../assets/images/butles/red.png';
+import s from './CartItem.module.scss';
+
+export const CartItem = ({ id, price, count, imageUrl, name, size }) => {
+  const ref = React.useRef();
+  const dispatch = useDispatch();
+
+  const onClickPlus = () => {
+    dispatch(addItem({ id }));
+  };
+  const onClickMinus = () => {
+    dispatch(minusItem(id));
+  };
+  const onClickRemove = () => {
+    if (window.confirm('Are you sure you want to remove?'))
+      dispatch(removeItem(id));
+  };
+  return (
+    <div className={s.wrapper}>
+      <div className={s.fotoAndImage}>
+        <img className={s.foto} src={imageUrl} alt="foto" />
+        <h3 className={s.name}>{name}</h3>
+      </div>
+
+      <div className={s.count}>
+        {count === 1 ? (
+          <button className={s.btnCount} type="button" disabled>
+            -
+          </button>
+        ) : (
+          <button onClick={onClickMinus} className={s.btnCount} type="button">
+            -
+          </button>
+        )}
+
+        <span ref={ref} className={s.number}>
+          {count}
+        </span>
+        <button onClick={onClickPlus} className={s.btnCount} type="button">
+          +
+        </button>
+      </div>
+
+      <div className={s.closeAndPrice}>
+        <button onClick={onClickRemove} className={s.btnClose} type="button">
+          +
+        </button>
+        <span className={s.price}>$ {price * count}.00</span>
+      </div>
+    </div>
+  );
+};

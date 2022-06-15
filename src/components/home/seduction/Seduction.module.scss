@@ -1,0 +1,104 @@
+@import "../../../scss/variables";
+
+.section {
+  outline: $outline;
+  position: relative;
+  max-width: $section-width;
+  width: 100%;
+  padding: $section-padding;
+  // margin-bottom: 230px;
+}
+.bgWrapper {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 45%;
+
+  .bg {
+    width: 100%;
+    // width: 870px;
+    height: 525px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../../../assets/images/home/shadow.png) no-repeat top;
+    background-size: cover;
+    border-radius: 20px;
+  }
+
+  span {
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    font-size: 70px;
+    color: #fff;
+    z-index: 2;
+  }
+}
+.container {
+  outline: $outline;
+  max-width: $items-width;
+  padding: $items-padding;
+  margin: $margin;
+
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $medium) {
+    max-width: 100%;
+    padding: 30px 120px 0 120px;
+  }
+}
+
+.textWtapper {
+  outline: $outline;
+  width: calc(55% - 50px);
+  padding-left: 50px;
+
+  p {
+    width: 65%;
+    margin: 20px 0 50px 0;
+  }
+}
+.title {
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 62px;
+  letter-spacing: $letter-spacing;
+  color: $black;
+}
+.link {
+  font-size: 22px;
+  color: $gold;
+  border-bottom: 1px solid $gold;
+  margin-left: 30px;
+  letter-spacing: $letter-spacing;
+}
+
+.imgWrapper {
+  z-index: 2;
+  width: 50%;
+  padding-top: 30px;
+  padding-right: 20px;
+}
+
+.flak {
+  width: 394px;
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  @media (max-width: $max) {
+    width: 342px;
+    margin-right: -2%;
+  }
+  @media (max-width: $medium) {
+    width: 320px;
+    margin-right: -5%;
+  }
+}
