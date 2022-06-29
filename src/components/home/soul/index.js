@@ -1,1 +1,1 @@
-export { default } from './Soul';
+export * from './Soul';

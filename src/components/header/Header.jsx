@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addHeaderHeight } from '../../redux/slices/heightSlice';
 
 // import CartPage from '../cart';
-import logo from '../../assets/images/icons/logo.svg';
+import letter from '../../assets/images/Vector-1.png';
+import contur from '../../assets/images/Vector.png';
 import cartImg from '../../assets/images/icons/cart.svg';
 import arrov from '../../assets/images/icons/navArrov.svg';
 import s from './Header.module.scss';
@@ -61,8 +62,9 @@ const Header = () => {
         {/* {cart && <Cart closeCart={closeCart} />} */}
 
         <div className={s.wrapper}>
-          <Link to="/">
-            <img className={s.logo} src={logo} alt="logo" />
+          <Link className={s.logoWrapper} to="/">
+            <img className={s.contur} src={contur} alt="logo" />
+            <img className={s.letter} src={letter} alt="logo" />
           </Link>
 
           <nav className={s.navBlock}>
@@ -97,12 +99,12 @@ const Header = () => {
           <Link to="/cart">
             {totalPrice ? (
               <div onClick={() => setCart(!cart)} className={s.cartLink}>
-                <img src={cartImg} alt="cart" /> <p>cart</p>
+                <img src={cartImg} alt="cart" />
                 {items && <span>( {items.length} )</span>}
               </div>
             ) : (
               <div className={s.cartLinkEmpty}>
-                <img src={cartImg} alt="cart" /> <p>cart</p>
+                <img src={cartImg} alt="cart" />
               </div>
             )}
           </Link>

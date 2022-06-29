@@ -3,10 +3,10 @@ import { NavLink, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addFooterHeight } from '../../redux/slices/heightSlice';
 
-import logo from '../../assets/images/icons/LogoFooter.svg';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import { LogoFooter } from './LogoFooter';
+import { ReactComponent as InstagramIcon } from '../../assets/images/icons/Instagram.svg';
+import { ReactComponent as TwitterIcon } from '../../assets/images/icons/twiter.svg';
+import { ReactComponent as FacebookIcon } from '../../assets/images/icons/Facebook.svg';
 import { ReactComponent as Ball } from '../../assets/images/icons/ball.svg';
 import s from './Footer.module.scss';
 
@@ -25,9 +25,9 @@ const Footer = () => {
     <>
       <footer ref={footer} className={s.footer}>
         <div className={s.main}>
-          <Link to="/">
-            <img className={s.logo} src={logo} alt="logo" />
-          </Link>
+          <div className={s.logoWrapper}>
+            <LogoFooter />
+          </div>
 
           <ul className={s.nav}>
             <li key="menu">MENU</li>
@@ -67,29 +67,37 @@ const Footer = () => {
             </li>
           </ul>
 
-          <div className={s.contacts}>
-            <p>CONTACTS</p>
-            <a className={s.tel} href="tel:+971501871707">
-              +971501871707
-            </a>
-            <div className={s.social}>
-              <a href="#">
-                <Ball className={s.ball} />
+          <div className={s.conectInfo}>
+            <div className={s.contacts}>
+              <p>CONTACTS</p>
+              <a className={s.tel} href="tel:+971501871707">
+                +971501871707
               </a>
-              <a href="#">
-                <InstagramIcon />
-              </a>
-              <a href="#">
-                <TwitterIcon />
-              </a>
-              <a href="#">
-                <FacebookIcon />
-              </a>
+            </div>
+            <div className={s.socialWrapper}>
+              <p>SOCIAL MEDIA</p>
+              <div className={s.social}>
+                <a href="#">
+                  <Ball className={s.icons} />
+                </a>
+                <a href="#">
+                  <InstagramIcon className={s.icons} />
+                </a>
+                <a href="#">
+                  <TwitterIcon className={s.icons} />
+                </a>
+                <a href="#">
+                  <FacebookIcon className={s.icons} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
         <div className={s.subFooter}>
-          <p>© 2022 COPYRIGHT Soul of mine</p>
+          <div className={s.textWrapper}>
+            <p>© 2022 COPYRIGHT SOUL OF MINE</p>
+            <p>Design by All-in Agency. All rights reserved</p>
+          </div>
         </div>
       </footer>
     </>

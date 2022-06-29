@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { LinkTo } from '../../link';
 import { addItem } from '../../../redux/slices/cartSlice';
 
 import ButtonAdd from '../../addButton';
@@ -22,15 +23,59 @@ const Twirl = () => {
     dispatch(addItem(item));
   };
 
+  const leftAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+  const rightAnimation = {
+    hidden: {
+      x: 100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+  const toTopAnimation = {
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+
   return (
-    <section className={s.section}>
-      <div className={s.bgWrapper}>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2, once: true }}
+      className={s.section}>
+      <motion.div custom={2} variants={rightAnimation} className={s.bgWrapper}>
         <span>TWIRL</span>
         <img className={s.bg} src={bg} alt="bg" />
-      </div>
+      </motion.div>
 
       <div className={s.container}>
-        <div className={s.textWtapper}>
+        <motion.div
+          custom={2}
+          variants={leftAnimation}
+          className={s.textWtapper}>
           <h3 className={s.title}>
             twirl - this is how feeling smells ease and unconditional happiness
           </h3>
@@ -40,17 +85,21 @@ const Twirl = () => {
           </p>
           <div className={s.btnswrapper}>
             <ButtonAdd onClickAdd={onClickAdd} />
-            <Link className={s.link} to="/twirl">
-              SEE MORE
-            </Link>
+            <LinkTo path={'/twirl'} name={'see more'} />
           </div>
-        </div>
+        </motion.div>
 
         <div className={s.imgWrapper}>
-          <img className={s.flak} src={flak} alt="twirl" />
+          <motion.img
+            custom={3}
+            variants={toTopAnimation}
+            className={s.flak}
+            src={flak}
+            alt="twirl"
+          />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default Twirl;

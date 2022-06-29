@@ -1,17 +1,52 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
+import { LinkTo } from '../../link';
 import img from '../../../assets/images/home/brand.png';
 import s from './Brand.module.scss';
 
 const Brand = () => {
+  const leftAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+
+  const toTopAnimation = {
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
   return (
-    <section className={s.section}>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2, once: true }}
+      className={s.section}>
       <div className={s.container}>
-        <h2 className={s.title}>
+        <motion.h2 custom={2} variants={leftAnimation} className={s.titleMob}>
+          <span> This brand</span> <br />
+          <span>was born in</span> <br />
+          <span> great love...</span>
+        </motion.h2>
+        <motion.h2 custom={2} variants={leftAnimation} className={s.title}>
           This brand was born <br />
           in great love...
-        </h2>
+        </motion.h2>
         <div className={s.content}>
           <div className={s.descr}>
             <p className="text">
@@ -20,25 +55,15 @@ const Brand = () => {
               about familiar things, the highest category of owners, Freedom of
               choice, inserts and desires.
             </p>
-            <Link className={s.link} to="/about-us">
-              LEARN MORE
-            </Link>
+
+            <LinkTo path={'/about-us'} />
           </div>
-          <img className={s.img} src={img} alt="foto" />
+          <motion.div custom={3} variants={toTopAnimation}>
+            <img className={s.img} src={img} alt="foto" />
+          </motion.div>
         </div>
       </div>
-      {/* <svg
-        className={s.svg}
-        width="123"
-        height="293"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M56.906 37.342c5.166-19 19.3-51.3 34.5-28.5 19 28.5 50.5 17 12 51s-36.5 2-52 42-23.5 27-15.5 65.5c6.4 30.8 21 96.166 27.5 125m-12-256c-6.834-15.333-25-42.3-43-27.5-22.5 18.5 12 45.5 27.5 93s-24.5-32 15.5-65.5Z"
-          stroke="#000"
-        />
-      </svg> */}
-    </section>
+    </motion.section>
   );
 };
 

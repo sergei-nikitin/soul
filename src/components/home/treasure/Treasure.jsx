@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 
 import { addItem } from '../../../redux/slices/cartSlice';
 
+import { LinkTo } from '../../link';
 import ButtonAdd from '../../addButton';
 import bg from '../../../assets/images/home/treasure-bg.png';
-import flak from '../../../assets/images/butles/red.png';
+import flak from '../../../assets/images/butles/blue.png';
 import s from '../twirl/Twirl.module.scss';
 
 const Treasure = () => {
@@ -23,15 +24,58 @@ const Treasure = () => {
     };
     dispatch(addItem(item));
   };
+  const leftAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+  const rightAnimation = {
+    hidden: {
+      x: 100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+  const toTopAnimation = {
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
   return (
-    <section className={s.section}>
-      <div className={s.bgWrapper}>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2, once: true }}
+      className={s.section}>
+      <motion.div custom={2} variants={rightAnimation} className={s.bgWrapper}>
         <span>TREASURE</span>
         <img className={s.bg} src={bg} alt="bg" />
-      </div>
+      </motion.div>
 
       <div className={s.container}>
-        <div className={s.textWtapper}>
+        <motion.div
+          custom={2}
+          variants={leftAnimation}
+          className={s.textWtapper}>
           <h3 className={s.title}>treasure - male energy</h3>
           <p className="text">
             A fragrance for men, sophisticated and a little overbearing.
@@ -40,17 +84,21 @@ const Treasure = () => {
           </p>
           <div className={s.btnswrapper}>
             <ButtonAdd onClickAdd={onClickAdd} />
-            <Link className={s.link} to="/treasure">
-              SEE MORE
-            </Link>
+            <LinkTo path={'/treasure'} name={'see more'} />
           </div>
-        </div>
+        </motion.div>
 
         <div className={s.imgWrapper}>
-          <img className={s.flak} src={flak} alt="twirl" />
+          <motion.img
+            custom={3}
+            variants={toTopAnimation}
+            className={s.flak}
+            src={flak}
+            alt="twirl"
+          />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default Treasure;

@@ -1,90 +1,197 @@
 @import "../../../scss/variables";
 
 .section {
-  position: relative;
-  background: #29adff17;
-  // background: #faeae3;
-  padding: 410px 0 20px 0;
+  max-width: $max;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
   border-top: 1px solid #0082d1;
   border-bottom: 1px solid #ffd100;
-
-  .imgBg {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    width: 100%;
-    height: 650px;
+  @media (min-width: $tablet-L) {
+    margin-bottom: 100px;
   }
-  .svg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  @media (min-width: $descktop-S) {
+    margin-bottom: 150px;
   }
 }
 
 .container {
-  position: relative;
-  max-width: 1280px;
+  overflow: hidden;
   width: 100%;
-  margin: $margin;
-  padding: $padding;
-  padding-bottom: 200px;
-
-  display: flex;
-  justify-content: space-between;
-
-  .btl {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-47%);
+  padding: 40px 0 50px 0;
+  @media (min-width: $tablet-L) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: $descktop-S) {
+    padding: 70px 0;
   }
 }
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 34px;
+  color: #0082d1;
 
-.upper {
-  display: flex;
-  flex-direction: column;
-  padding-top: 120px;
-  width: 40%;
+  width: 100%;
+  margin-bottom: 30px;
+  @media (min-width: $mob-L) {
+    margin-bottom: 40px;
+  }
+  @media (min-width: $tablet-S) {
+    font-size: 64px;
+  }
+  @media (min-width: $descktop-S) {
+    font-size: 120px;
+  }
+}
+.img {
+  display: block;
+  width: 429px;
+  height: 290px;
+  object-fit: contain;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  @media (min-width: $mob-XL) {
+    width: 505px;
+    height: 390px;
+  }
+  @media (min-width: $tablet-S) {
+    width: 630px;
+    height: 490px;
+  }
+  @media (min-width: $tablet-L) {
+    width: 70%;
+    height: 580px;
+    margin-left: -10%;
+  }
+  @media (min-width: $descktop-S) {
+    height: 725px;
+    margin-left: 0;
+  }
+  @media (min-width: $descktop-L) {
+    height: 785px;
+  }
+}
+.desrc {
+  p:nth-of-type(1),
   p:nth-of-type(2) {
-    margin-left: 30%;
-    margin-top: 30px;
+    display: none;
+    @media (min-width: $tablet-L) {
+      display: block;
+    }
   }
-  p {
-    width: 60%;
+  @media (min-width: $tablet-L) {
+    width: 40%;
+    padding-right: 50px;
+    transform: translateX(-10%);
+  }
+  @media (min-width: $descktop-S) {
+    width: 30%;
+    padding-right: 120px;
+  }
+  @media (min-width: $descktop-L) {
+    transform: translateX(-20%);
   }
 }
-.lower {
-  display: flex;
-  flex-direction: column;
-  padding-top: 150px;
-  width: 30%;
-  margin-right: 8%;
+.text {
+  font-size: 16px;
+  line-height: 25px;
+  font-family: "inter";
+  color: $dark-gray;
 
-  p {
-    // width: 60%;
-    padding-left: 13px;
+  width: 100%;
+  padding: 0 40px;
+  margin-bottom: 30px;
+  @media (min-width: $mob-L) {
+    padding: 0 70px;
+  }
+  @media (min-width: $mob-XL) {
+    padding: 0 140px;
+  }
+  @media (min-width: $tablet-S) {
+    padding: 0 230px;
+  }
+  @media (min-width: $tablet-L) {
+    padding: 0;
   }
 }
-
-.btnWrapper {
-  display: flex;
+.wrapper {
+  cursor: pointer;
+  display: inline-flex;
   align-items: center;
-  justify-content: end;
-  margin-top: 55px;
-  // width: 50%;
-}
-.btn {
-  padding: 14px 33px 10px 33px;
-  font-size: 22px;
-  color: #035587;
-  background: #ffd100;
+
+  background: $yellow;
+  border: 1px solid $yellow;
+  border-radius: 20px;
   box-shadow: 0px 4px 9px rgba(133, 109, 5, 0.2);
-  border-radius: 77.5px;
+
   transition: $transition;
+  margin-left: 40px;
+  @media (min-width: $mob-L) {
+    margin-left: 70px;
+  }
+  @media (min-width: $mob-L) {
+    margin-left: 140px;
+  }
+  @media (min-width: $tablet-S) {
+    margin-left: 230px;
+  }
+  @media (min-width: $tablet-L) {
+    margin-left: 0;
+  }
 
   &:hover {
-    color: #ffd100;
-    background: #0082d1;
+    background: $yellow;
+    border: 1px solid $yellow;
+    .btn {
+      background: $yellow;
+    }
+  }
+  &:active {
+    background: #81cffe;
+    border: 1px solid #81cffe;
+    .btn {
+      background: #81cffe;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 13px 6px 13px;
+  border-radius: 20px;
+  background: #ffdfd4;
+
+  text-transform: uppercase;
+  text-align: center;
+  color: $blue;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+
+  transition: $transition;
+  @media (min-width: $mob-XL) {
+    padding: 12px 13px 8px 13px;
+  }
+  @media (min-width: $descktop-S) {
+    // padding: 14px 16px 10px 16px;
+    padding: 9px 16px 5px 16px;
+    font-size: 22px;
+  }
+}
+
+.icon {
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+  margin: 0 13px;
+  object-fit: contain;
+  path {
+    fill: $blue;
   }
 }

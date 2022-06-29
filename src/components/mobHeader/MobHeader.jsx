@@ -8,12 +8,14 @@ import { ReactComponent as Ball } from '../../assets/images/icons/ball.svg';
 import { ReactComponent as Insta } from '../../assets/images/icons/insta.svg';
 import { ReactComponent as Twiter } from '../../assets/images/icons/twiter.svg';
 import { ReactComponent as FaceBook } from '../../assets/images/icons/fb.svg';
-import logo from '../../assets/images/icons/logo.svg';
+import letter from '../../assets/images/Vector-1.png';
+import contur from '../../assets/images/Vector.png';
 import cart from '../../assets/images/icons/cart.svg';
 import arrov from '../../assets/images/icons/collection-arrov.svg';
 import s from './MobHeader.module.scss';
 
 const MobHeader = () => {
+  const mobHeader = React.useRef();
   const { items } = useSelector((state) => state.cart);
   const [menu, setMenu] = React.useState(false);
   const [rotate, setRotate] = React.useState(false);
@@ -34,16 +36,46 @@ const MobHeader = () => {
     setSelectItems(!selectItems);
   };
 
+  const [show, setShow] = React.useState(true);
+  const [lastScrollY, setLastScrollY] = React.useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > lastScrollY) {
+        // if scroll down hide the navbar
+        setShow(false);
+      } else {
+        // if scroll up show the navbar
+        setShow(true);
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+  // className={show ? 'mobHeader' : 'mobHeaderHidden'}
   return (
-    <div className={s.header}>
+    <header ref={mobHeader} className={show ? 'mobHeader' : 'mobHeaderHidden'}>
       {menu ? (
         <Close onClick={closeMenu} className={s.burger} />
       ) : (
         <Burger onClick={closeMenu} className={s.burger} />
       )}
 
-      <Link className={s.logoLink} to="/">
-        <img className={s.logo} src={logo} alt="logo" />
+      <Link className={s.logoWrapper} to="/">
+        <img className={s.contur} src={contur} alt="logo" />
+        <img className={s.letter} src={letter} alt="logo" />
       </Link>
 
       <Link className={s.cart} to="/cart">
@@ -164,7 +196,7 @@ const MobHeader = () => {
           contacts
         </NavLink>
       </div> */}
-    </div>
+    </header>
   );
 };
 

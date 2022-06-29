@@ -1,10 +1,66 @@
 @import "../../scss/variables";
 
-.title {
-  font-size: 64px;
-  color: $gold;
-  text-align: left;
+.wrapper {
   width: 100%;
+  border-radius: 20px;
+  @media (min-width: $tablet-L) {
+    width: 55%;
+    padding-bottom: 30px;
+    background: rgb(255, 255, 255, 0.5);
+  }
+  @media (min-width: $descktop-S) {
+    width: 700px;
+  }
+}
+
+.upperBlock {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px 10px 15px;
+
+  border-bottom: 1px solid $dark-gray;
+
+  @media (min-width: $mob-XL) {
+    padding: 25px 20px;
+  }
+  @media (min-width: $tablet-S) {
+    padding: 35px 20px;
+  }
+}
+.title {
+  font-size: 30px;
+  font-weight: 400;
+  color: $gold;
+  @media (min-width: $mob-XL) {
+    font-size: 40px;
+  }
+  @media (min-width: $tablet-S) {
+    font-size: 64px;
+  }
+}
+.clearCart {
+  cursor: pointer;
+
+  @media (min-width: $descktop-S) {
+    position: absolute;
+    right: 120px;
+    top: 120px;
+  }
+}
+.closeIcon {
+  width: 17px;
+  height: 17px;
+  @media (min-width: $mob-XL) {
+    width: 25px;
+    height: 25px;
+  }
+  @media (min-width: $tablet-S) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .itemsWrap {
@@ -12,74 +68,39 @@
   flex-direction: column;
 
   width: 100%;
-  margin-top: 60px;
-}
-.description {
-  display: flex;
-  justify-content: space-between;
-
-  padding-bottom: 10px;
-  padding-right: 30px;
-  margin-bottom: 12px;
-  border-bottom: 2px solid $dark-gray;
-  p {
-    font-size: 18px;
-  }
+  margin-top: 20px;
 }
 
 .info {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin: 45px 0 0 0;
-  padding-right: 30px;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
   p:first-of-type {
     letter-spacing: $letter-spacing;
+    @media (min-width: $descktop-S) {
+      margin-right: 50px;
+    }
   }
   p {
-    font-size: 32px;
+    font-size: 16px;
     color: $black;
   }
   .totalPrice {
     color: $gold;
-    margin-left: 130px;
   }
-}
-.actions {
-  width: 100%;
-  padding: 0 30px;
-  margin-top: 90px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.link {
-  font-size: 16px;
-  color: $black;
-
-  display: flex;
-  align-items: center;
-
-  img {
-    margin-right: 100px;
-    transform: rotate(180deg);
+  @media (min-width: $mob-XL) {
+    padding: 0 15px;
+    p {
+      font-size: 22px;
+    }
   }
-}
-.CHECKOUT {
-  padding: 15px 125px 11px 125px;
-  font-size: 22px;
-  letter-spacing: $letter-spacing;
-  color: #fff;
-  background-color: $gold;
-  box-shadow: 0px 4px 9px rgba(133, 109, 5, 0.2);
-  border-radius: 77.5px;
-  border: 1px solid $gold;
-  transition: $transition;
-
-  &:hover {
-    color: $gold;
-    background-color: #fff;
+  @media (min-width: $descktop-S) {
+    justify-content: end;
+    p {
+      font-size: 40px;
+    }
   }
 }

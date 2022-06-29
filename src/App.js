@@ -5,19 +5,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import MobHeader from './components/mobHeader';
 import Footer from './components/footer';
-import { Home } from './pages/home/Home';
-import { AboutUs } from './pages/about-us/AboutUs';
-import { Collection } from './pages/collection/Collection';
-import { Twirl } from './pages/twirl/Twirl';
-import { Treasure } from './pages/treasure/Treasure';
-import { Seduction } from './pages/seduction/Seduction';
-import { Contacts } from './pages/contacts/Contacts';
-import { CartPage } from './pages/cart/Cart';
+import { Home } from './pages/Home';
+import { AboutUs } from './pages/AboutUs';
+import { Collection } from './pages/Collection';
+import { Twirl } from './pages/Twirl';
+import { Treasure } from './pages/Treasure';
+import { Seduction } from './pages/Seduction';
+import { Contacts } from './pages/Contacts';
+import { CartPage } from './pages/Cart';
+import { SuccessOrder } from './pages/SuccessOrder';
 
 function App() {
-  // const footer = React.useRef();
-
-  // let headerHeight = header.current.clientHeight;
   return (
     <BrowserRouter>
       <Header />
@@ -32,6 +30,7 @@ function App() {
           <Route path="/seduction" element={<Seduction />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/succes-oreder" element={<SuccessOrder />} />
         </Routes>
       </div>
 

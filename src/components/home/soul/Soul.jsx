@@ -1,25 +1,53 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-import img from '../../../assets/images/home/soul.png';
+import { LinkTo } from '../../link';
+import img from '../../../assets/images/home/soul.jpg';
 import s from './Soul.module.scss';
 
-const Soul = () => {
+export const Soul = () => {
+  const leftAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+  const toTopAnimation = {
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
   return (
-    <section className={s.section}>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2, once: true }}
+      className={s.section}>
       <div className={s.container}>
-        <div className={s.descr}>
+        <motion.div custom={2} variants={leftAnimation} className={s.descr}>
           <h2 className={s.title}>SOUL OF MINE PERFUME</h2>
           <p className="text">
             Is carried in over 100 stores across 18 countries.
           </p>
-          <Link className={s.link} to="/collection">
-            LEARN MORE
-          </Link>
-        </div>
-        <img className={s.img} src={img} alt="img" />
+          <LinkTo path={'/collection'} />
+        </motion.div>
+        <motion.div custom={3} variants={toTopAnimation}>
+          <img className={s.img} src={img} alt="img" />
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
-export default Soul;

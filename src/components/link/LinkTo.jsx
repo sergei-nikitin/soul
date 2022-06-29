@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 
 import s from './LinkTo.module.scss';
 
-const LinkTo = ({ name, path }) => {
+export const LinkTo = ({ path, name }) => {
   return (
-    <div className={s.wrapper}>
-      <Link className={s.link} to={{ pathname: path }}>
-        {name}
-      </Link>
-    </div>
+    <Link className={s.link} to={{ pathname: path }}>
+      {name ? name : 'LEARN MORE'}
+    </Link>
   );
 };
-export default LinkTo;

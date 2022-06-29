@@ -1,47 +1,90 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-import img from '../../../assets/images/home/aboutUS.jpg';
+import { LinkTo } from '../../link';
+import img from '../../../assets/images/home/aboutUS.png';
 import s from './About.module.scss';
 
 const About = () => {
+  const textAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+  const textAnimationFromRight = {
+    hidden: {
+      x: 100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
+  const fotoAnimation = {
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.2, duration: 0.3 },
+    }),
+  };
   return (
-    <section className={s.section}>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2, once: true }}
+      className={s.section}>
       <div className={s.container}>
-        <h2 className={s.title}>ABOUT US</h2>
-        <div className={s.fotoWrapper}>
+        <motion.h2 custom={1} variants={textAnimation} className={s.title}>
+          ABOUT US
+        </motion.h2>
+        <motion.div
+          custom={2}
+          variants={fotoAnimation}
+          className={s.fotoWrapper}>
           <div className={s.img}>
             <img className={s.aboutImg} src={img} alt="foto" />
           </div>
-        </div>
+        </motion.div>
 
         <div className={s.descrWrapper}>
-          <h2 className={s.psevdoTitle}>
-            IT`S ABOUT
-            <br />
-            <span>LOVE</span>
-          </h2>
           <div className={s.textBlock}>
-            <p className="text">
+            <motion.p
+              custom={2}
+              variants={textAnimationFromRight}
+              className="text">
               These are emotions, who consider a person to adulthood, feelings,
               wings that lift us when it seems tenderness of touch new thoughts
               about familiar things, the highest category of owners, Freedom of
               choice, inserts and desires.
-            </p>
-            <p className="text">
+            </motion.p>
+            <motion.p
+              custom={3}
+              variants={textAnimationFromRight}
+              className="text">
               These are emotions, who consider a person to adulthood, feelings,
               wings that lift us when it seems tenderness of touch new thoughts
               about familiar things.
-            </p>
+            </motion.p>
             <div className={s.linkWrap}>
-              <Link className={s.link} to="/about-us">
-                LEARN MORE
-              </Link>
+              <LinkTo path={'/about-us'} />
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

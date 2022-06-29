@@ -1,13 +1,17 @@
 $gold: #bb9c13;
+// $gold: #fdcf04;
 // $gray: #f3f2f2;
-$gray: #9a9a9a;
+$gray: rgba(131, 131, 131, 0.7);
 $dark-gray: #525252;
 $black: #0f0f0f;
 $roz: #ffdfd4;
+$yellow: #ffd100;
+$blue: #0082d1;
 
-$outline: 1px solid rgb(0, 59, 148);
+$outline-section: 2px solid rgb(2, 145, 255);
+$outline: 2px solid rgb(255, 255, 0);
 $letter-spacing: 0.1rem;
-$img-rotate: rotate(-8deg);
+$img-rotate: rotate(8deg);
 
 // section styles
 $section-width: 1920px;
@@ -24,13 +28,16 @@ $items-width: 65%;
 $items-padding: 40px 0;
 
 // breackpoints
-$max: 1919px;
-$pre-max: 1731px;
-$medium: 1440px;
-$pre-medium: 1280px;
-$ipadPro: 834px;
-$galaxyFold: 569px;
-$iphone12: 425px;
-$iphone8: 375px;
+$max: 1920px;
+$descktop-XL: 1728px;
+$descktop-L: 1440px;
+$descktop-S: 1280px;
+
+$tablet-L: 1024px;
+$tablet-S: 834px;
+
+$mob-XL: 569px;
+$mob-L: 428px;
+$mob-S: 375px;
 
 $transition: all 0.2s linear;

@@ -1,52 +1,29 @@
 @import "../../scss/variables";
 
-.wrapper {
-  // outline: $outline;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .cartForm {
-  padding: 20px 0;
-  width: 55%;
+  margin: 30px 0 20px 0;
+  width: 100%;
 
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-
-  input {
-    transition: $transition;
-    width: 100%;
-    padding: 20px 0;
-    margin-bottom: 50px;
-    font-size: 14px;
-    color: $black;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid $black;
-
-    &:focus + .label,
-    &:not(:placeholder-shown) + .label {
-      transform: translateY(-45px);
-    }
+  @media (min-width: $mob-XL) {
+    padding: 0 15px;
   }
-  // input:first-of-type {
-  //   margin-bottom: 50px;
-  // }
+  @media (min-width: $tablet-S) {
+    width: 40%;
+    padding: 0 0 0 30px;
+    margin: 30px 0;
+  }
+  @media (min-width: $descktop-S) {
+    width: 30%;
+    padding: 0 0 0 30px;
+  }
 }
-.formTitle {
-  width: 100%;
-  font-size: 22px;
-  letter-spacing: $letter-spacing;
-  color: $dark-gray;
-  margin-bottom: 30px;
-}
+
 .formField {
   position: relative;
-  width: calc(50% - 20px);
+  width: 100%;
 }
 
 .label {
@@ -57,27 +34,81 @@
   letter-spacing: $letter-spacing;
   color: $gray;
   transition: $transition;
+
+  @media (min-width: $descktop-S) {
+    top: 5px;
+    font-size: 40px;
+  }
 }
+.input {
+  // outline: $outline;
+  transition: $transition;
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 50px;
+  font-size: 14px;
+  color: $black;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $black;
+
+  &:focus + .label,
+  &:not(:placeholder-shown) + .label {
+    transform: translateY(-45px);
+  }
+  @media (min-width: $descktop-S) {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+}
+
 .checkBoxWrapper {
-  width: calc(50% - 20px);
+  outline: $outline;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: start;
+  // justify-content: start;
 
-  input {
-    width: 20px !important;
-    height: 20px !important;
-  }
+  height: 30px;
 
   label {
     margin-top: -25px;
   }
 }
-.checkbox {
-  margin-right: 15px;
-  // background: transparent;
-  // border: 1px solid red;
-  // border-color: $gray;
+
+.checkboxLabel {
+  cursor: pointer;
+  position: relative;
+  font-family: "inter";
+  font-size: 14px;
+  color: $gray;
+  padding-left: 1.3em;
+  margin-top: -30px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+.checkBox {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  left: 0;
+  border: 1px solid $gray;
+  border-radius: 3px;
+
+  transition: $transition;
+}
+.checkInput {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.checkInput:checked + .checkBox {
+  background: $gold;
+  border: 1px solid $gold;
+  background-image: url(../../assets/images/icons/check.svg);
 }
 
 .contacts {
@@ -95,80 +126,56 @@ textarea {
   font-size: 30px;
 }
 
+.actions {
+  width: 100%;
+
+  margin-top: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (min-width: $descktop-S) {
+    position: absolute;
+    bottom: 50px;
+    left: 120px;
+    width: calc(100% - 240px);
+  }
+}
+.link {
+  font-size: 16px;
+  color: $black;
+
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 15px;
+    transform: rotate(180deg);
+  }
+}
 .submit {
-  padding: 15px 82px 11px 82px;
-  font-size: 22px;
+  padding: 10px 13px 6px 13px;
+  font-size: 16px;
   letter-spacing: $letter-spacing;
   color: #fff;
   background-color: $gold;
   box-shadow: 0px 4px 9px rgba(133, 109, 5, 0.2);
-  border-radius: 77.5px;
-  border: 1px solid $gold;
+  border-radius: 20px;
+  // border: 1px solid $gold;
   transition: $transition;
 
   &:hover {
-    color: $gold;
-    background-color: #fff;
+    background-color: #bb7813;
   }
-}
-
-// oreders
-.ordersWrapper {
-  padding: 40px 40px;
-  width: 40%;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-}
-.ordersTitle {
-  font-size: 22px;
-  color: $dark-gray;
-}
-.ordersDescr {
-  margin-top: 45px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  font-size: 18px;
-  line-height: 28px;
-  color: $dark-gray;
-  border-bottom: 1px solid $dark-gray;
-}
-
-.totalWrap {
-  margin-top: 50px;
-  width: 100%;
-  display: flex;
-}
-.total {
-  font-size: 22px;
-  color: $black;
-  margin-left: auto;
-}
-.price {
-  font-size: 22px;
-  color: $gold;
-  margin-left: 80px;
-}
-
-// product
-.prod {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 0;
-  border-bottom: 1px solid $black;
-}
-.prodImg {
-  width: 82px;
-  height: 120px;
-}
-.prodName {
-  text-transform: uppercase;
-  font-size: 22px;
-  color: $black;
-}
-.prodPrice {
-  font-size: 22px;
-  color: $gold;
+  &:active {
+    background-color: #8e5c11;
+  }
+  @media (min-width: $mob-XL) {
+    padding: 12px 20px 8px 20px;
+    margin-left: 20px;
+  }
+  @media (min-width: $descktop-S) {
+    padding: 12px 54px 8px 54px;
+    font-size: 22px;
+  }
 }
