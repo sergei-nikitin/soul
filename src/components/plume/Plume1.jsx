@@ -83,7 +83,7 @@ function Scene() {
     <Canvas
       gl={{antialias: true, toneMapping: THREE.NoToneMapping}}
       linear
-      camera={{fov: 11, position: [0, 0, 1.5]}}
+      camera={{fov: 12, position: [-0.2, 0, 1.5]}}
     >
       <Suspense fallback={null}>
         <Wave/>
