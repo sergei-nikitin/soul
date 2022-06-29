@@ -1,10 +1,9 @@
-import React, {useRef, useState, useMemo, Suspense} from "react";
+import React, {Suspense, useRef} from "react";
 import {shaderMaterial, useTexture} from "@react-three/drei";
 import glsl from "babel-plugin-glsl/macro"
-import {Canvas, useLoader, extend, useFrame} from "react-three-fiber";
+import {Canvas, extend, useFrame} from "react-three-fiber";
 import * as THREE from "three";
 // import plumPng from '../../images/ukraine-ukraina-flag.jpeg'
-import {TextureLoader} from 'three/src/loaders/TextureLoader'
 import plumPng from '../../images/pngwing.png'
 
 const WaveShaderMaterial = shaderMaterial(
@@ -92,11 +91,11 @@ function Scene() {
   )
 }
 
-const Plume = () => {
+const Plume1 = () => {
   return (
     <Scene/>
   );
 }
-export default Plume
+export default Plume1
 
 // npm i three @react-three/fiber @react-three/drei glslify babel-plugin-glsl glsl-noise
