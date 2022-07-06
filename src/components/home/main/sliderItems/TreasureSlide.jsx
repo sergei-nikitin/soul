@@ -4,7 +4,8 @@ import { LinkTo } from '../../../link';
 import img from '../../../../assets/images/butles/blue.png';
 import s from './SliderMineItem.module.scss';
 
-export const TreasureSlide = ({ NextBtn, PrevBtn }) => {
+export const TreasureSlide = () => {
+  // export const TreasureSlide = ({ NextBtn, PrevBtn }) => {
   return (
     <div className={s.container}>
       <p className={s.brandName}>
@@ -18,11 +19,11 @@ export const TreasureSlide = ({ NextBtn, PrevBtn }) => {
         <img className={s.img} src={img} alt="img" />
 
         <div className={s.navPoints}>
-          <PrevBtn />
+          {/* <PrevBtn /> */}
           <span className={s.pointActive}></span>
           <span className={s.point}></span>
           <span className={s.point}></span>
-          <NextBtn />
+          {/* <NextBtn /> */}
         </div>
       </div>
       <div className={s.textWrapper}>

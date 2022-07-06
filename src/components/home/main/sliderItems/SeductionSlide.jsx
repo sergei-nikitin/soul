@@ -5,6 +5,7 @@ import img from '../../../../assets/images/butles/red.png';
 import s from './SliderMineItem.module.scss';
 
 export const SeductionSlide = ({ NextBtn }) => {
+  // export const SeductionSlide = ({ NextBtn }) => {
   return (
     <div className={s.container}>
       <p className={s.brandName}>

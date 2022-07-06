@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { CustomSlider } from '../components/home/customSlider/CustomSlider';
 import Main from '../components/home/main';
+import SlickSlider from '../components/home/slick/SlickSlider';
 import About from '../components/home/about';
 import Twirl from '../components/home/twirl';
 import Treasure from '../components/home/treasure/Treasure';
@@ -15,7 +17,9 @@ export const Home = () => {
   }, []);
   return (
     <>
-      <Main />
+      <CustomSlider />
+      {/* <Main />
+      <SlickSlider /> */}
       <About />
       <Twirl />
       <Seduction />

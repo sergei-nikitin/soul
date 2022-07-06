@@ -1,0 +1,29 @@
+@import "../../../scss/variables";
+
+.slickslide {
+  position: relative;
+  background: rgba(211, 126, 51, 0.15);
+  max-width: $max;
+  width: 100%;
+  outline: $outline;
+
+  button {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    background: #000;
+  }
+  .slick-next {
+    left: 100px;
+  }
+  .slick-prev {
+    left: 250px;
+    z-index: 22;
+  }
+
+  .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

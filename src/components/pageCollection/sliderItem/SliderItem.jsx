@@ -8,7 +8,7 @@ import { TwirlMini } from '../miniProducts/TwirlMini';
 import ButtonAdd from '../../addButton';
 import { LinkTo } from '../../link';
 import s from './SliderItem.module.scss';
-import { ConstructionOutlined } from '@mui/icons-material';
+// import { ConstructionOutlined } from '@mui/icons-material';
 
 export const SliderItem = ({
   id,
@@ -24,7 +24,6 @@ export const SliderItem = ({
 }) => {
   const dispatch = useDispatch();
   const onClickAdd = () => {
-    console.log('hello');
     const item = {
       id: id,
       name: name,

@@ -4,7 +4,8 @@ import { LinkTo } from '../../../link';
 import img from '../../../../assets/images/butles/white.png';
 import s from './SliderMineItem.module.scss';
 
-export const TwirlSlide = ({ PrevBtn }) => {
+export const TwirlSlide = () => {
+  // export const TwirlSlide = ({ PrevBtn }) => {
   return (
     <div className={s.container}>
       <p className={s.brandName}>
@@ -19,7 +20,7 @@ export const TwirlSlide = ({ PrevBtn }) => {
         <img className={s.img} src={img} alt="img" />
 
         <div className={s.navPoints}>
-          <PrevBtn />
+          {/* <PrevBtn /> */}
           <span className={s.pointActive}></span>
           <span className={s.point}></span>
           <span className={s.point}></span>
