@@ -3,12 +3,12 @@ import {Canvas} from "@react-three/fiber";
 import {OrbitControls, PerspectiveCamera, useAnimations, useGLTF} from "@react-three/drei";
 import GltfModel from "./GltfModel";
 import cloth from './gltf/clothblend_botl.glb';
-import Model from "./gltf/Clothtest2";
+import Model from "./gltf/Test2";
 
 const ModelViewer = ({modelPath, scale = 40, position = [0, 0, 0]}) => {
   return (
     <Canvas
-      camera={{ position: [1,0,1] }}
+      camera={{ position: [3, 4, 15]}}
     >
       <ambientLight/>
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1}/>

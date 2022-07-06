@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4ba2d314-03b1-44ca-a2f5-560bf32f5786" name="Changes" comment="strange git push behavior">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/main/Main.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/plume/ModelViewer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/plume/ModelViewer.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AcYuUVSVQWRuBWDhJaJXo5aTiq" />
+  <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/plume/gltf/Test2.js" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/plume/gltf" />
+      <recent name="$PROJECT_DIR$/src/components/plume" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ba2d314-03b1-44ca-a2f5-560bf32f5786" name="Changes" comment="" />
+      <created>1655310562970</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655310562970</updated>
+      <workItem from="1655310564507" duration="1542000" />
+      <workItem from="1655366941264" duration="1402000" />
+      <workItem from="1655711883037" duration="6940000" />
+      <workItem from="1655802478166" duration="15513000" />
+      <workItem from="1656164093640" duration="2798000" />
+      <workItem from="1656310168944" duration="865000" />
+      <workItem from="1656326980077" duration="23000" />
+      <workItem from="1656333877842" duration="3911000" />
+      <workItem from="1656398033808" duration="6000" />
+      <workItem from="1656516339820" duration="3049000" />
+      <workItem from="1656593185661" duration="693000" />
+      <workItem from="1656862454408" duration="239000" />
+      <workItem from="1656862734555" duration="327000" />
+      <workItem from="1656863094760" duration="2578000" />
+      <workItem from="1656913912471" duration="39000" />
+      <workItem from="1656916186059" duration="2463000" />
+    </task>
+    <task id="LOCAL-00001" summary="strange git push behavior">
+      <created>1656516639625</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656516639625</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="strange git push behavior" />
+    <option name="LAST_COMMIT_MESSAGE" value="strange git push behavior" />
+  </component>
+</project>
