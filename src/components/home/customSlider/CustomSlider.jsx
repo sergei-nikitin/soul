@@ -11,8 +11,6 @@ import s from './CustomSlider.module.scss';
 export const CustomSlider = () => {
   const [activeNum, setActiveNum] = React.useState(0);
 
-  // const butles = [red, blue, gold];
-
   const onClickNext = () => {
     if (activeNum === 2) return;
     setActiveNum(activeNum + 1);
@@ -160,25 +158,6 @@ export const CustomSlider = () => {
           </div>
         </div>
       </div>
-      {/* <div className={s.container}>
-        <img
-          src={red}
-          className={activeNum === 0 ? s.active : s.hidden}
-          alt="foto"
-        />
-        <img
-          src={blue}
-          className={activeNum === 1 ? s.active : s.hidden}
-          alt="foto"
-        />
-        <img
-          src={gold}
-          className={activeNum === 2 ? s.active : s.hidden}
-          alt="foto"
-        />
-        <NextBtn />
-        <PrevBtn />
-      </div> */}
     </section>
   );
 };
