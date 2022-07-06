@@ -1,8 +1,10 @@
 import React from 'react';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { Mousewheel, Keyboard } from 'swiper';
+import { Navigation, Mousewheel, Keyboard, EffectFade } from 'swiper';
 
 import 'swiper/scss';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
 
 // import { LinkTo } from '../../link';
 // import Plume from '../../plume/Plume';
@@ -71,7 +73,7 @@ const Main = () => {
         cssMode={true}
         mousewheel={true}
         keyboard={true}
-        modules={[Mousewheel, Keyboard]}
+        modules={[Navigation, Mousewheel, Keyboard, EffectFade]}
         className={s.swiperMain}>
         <SwiperSlide>
           <SeductionSlide NextBtn={SlideNextButton} PrevBtn={SlidePrevButton} />
